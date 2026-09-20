@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+/*
+  Design language: "Ledger" — a case-records aesthetic.
+  Ink navy for structure, parchment for working surfaces, brass for
+  primary action, teal for verified/clear states, clay for locked/restricted.
+  Serif for identity & headings (case files feel authored, not app-generated),
+  Inter for interface text, Plex Mono strictly for IDs / hashes / timestamps
+  because that content is literally data, not styling.
+*/
+
+:root {
+  --ink-950: #0c1420;
+  --ink-900: #101a2b;
+  --ink-800: #17263d;
+  --ink-700: #22364f;
+  --ink-600: #33496a;
+  --ink-400: #6b829f;
+  --ink-200: #c3ceda;
+
+  --parchment-100: #f8f6f1;
+  --parchment-200: #f1ede3;
+  --parchment-300: #e7e0d0;
+
+  --brass-600: #a9822f;
+  --brass-500: #b8923f;
+  --brass-100: #f3e6c9;
+
+  --teal-600: #2f6f63;
+  --teal-100: #dcede8;
+
+  --clay-600: #a8462f;
+  --clay-100: #f5ded6;
+
+  --amber-600: #b07d1f;
+  --amber-100: #f6e8c9;
+
+  --font-serif: "Source Serif 4", Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+html {
+  font-family: var(--font-sans);
+}
+
+body {
+  background-color: var(--parchment-200);
+  color: var(--ink-900);
+}
+
+.font-serif-display {
+  font-family: var(--font-serif);
+}
+
+.font-mono-data {
+  font-family: var(--font-mono);
+  letter-spacing: 0.01em;
+}
+
+/* Visible keyboard focus everywhere — accessibility floor */
+:focus-visible {
+  outline: 2px solid var(--brass-600);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ink-600);
+  border-radius: 999px;
+}
